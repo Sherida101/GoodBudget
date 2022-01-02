@@ -1,6 +1,6 @@
 # Good Budget
 
-Persist data with Flutter's Hive NoSQL Database locally on Android, iOS & Web.
+A budget monitor or expense tracker Flutter application that persists data with Hive NoSQL database. This cross platform application is available on Android, iOS & Web. Both expenses and income are tracked.
 
 ### Download Android apk
 
@@ -10,15 +10,14 @@ Star ⭐ the repository if you like what you see 😉.
 
 ## 📽📸 &ensp;Preview
 
-
-|                                                   Light Theme                                                 |                                                Dark Theme                                                  |
-|                                     :----------------------------------:                                      |                                     :----------------------------------:                                      |
+|                                                  Light Theme                                                  |                                                  Dark Theme                                                   |
+| :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
 | <a href="https://www.youtube.com/watch?v=71g1mIcm2-U" target="_blank"><img src="appDemo.gif" width="350"></a> | <a href="https://www.youtube.com/watch?v=71g1mIcm2-U" target="_blank"><img src="appDemo.gif" width="350"></a> |
 
 ## Screens
 
-|                          **Light Theme - Home**                           |                 **Dark Theme - Home**                  |                       **Light Theme - Add Transaction**                       |                       **Dark Theme - Add Transaction**                        |
-| :-----------------------------------------------------------------------: | :----------------------------------------------------: | :---------------------------------------------------------------------------: | :---------------------------------------------------------------------------: |
+|                **Light Theme - Home**                 |                 **Dark Theme - Home**                  |             **Light Theme - Add Transaction**             |             **Dark Theme - Add Transaction**              |
+| :---------------------------------------------------: | :----------------------------------------------------: | :-------------------------------------------------------: | :-------------------------------------------------------: |
 | <img src="screenshots/lightTheme_home_screen.png"  /> | <img src="screenshots/darkTheme_home_screen.png"    /> | <img src="screenshots/lightTheme_add_transaction.png"  /> | <img src="screenshots/darkTheme_add_transaction.png"   /> |
 
 ## Features
