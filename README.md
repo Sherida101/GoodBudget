@@ -2,9 +2,9 @@
 
 A budget monitor or expense tracker Flutter application that persists data with Hive NoSQL database. This cross platform application is available on Android, iOS & Web. Both expenses and income are tracked.
 
-### Download Android apk
+### Android App Demonstration
 
-<a href='https://github.com/Sherida101/GoodBudget/releases/download/demo/appDemo.apk'>Download Good Budget Android apk</a>
+<a href='https://github.com/Sherida101/GoodBudget/releases/download/v1.0.0/goodBudgetDemo.apk'>Download Good Budget Android apk</a>
 
 Star ⭐ the repository if you like what you see 😉.
 
