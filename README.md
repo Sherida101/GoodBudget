@@ -1,52 +1,65 @@
-# Flutter Tutorial - Hive NoSQL Database
-[![Youtube](https://img.shields.io/static/v1?label=JohannesMilke&message=Subscribe&logo=YouTube&color=FF0000&style=for-the-badge)][youtube]
-[![Twitter Follow](https://img.shields.io/twitter/follow/JohannesMilke?color=1DA1F2&label=Followers&logo=twitter&style=for-the-badge)][twitter]
-[![Newsletter](https://img.shields.io/static/v1?label=Follow&message=My%20Flutter%20Newsletter&color=5FB709&style=for-the-badge)][newsletter]
-   
-[<img alt="JohannesMilke | Sponsor" height="28px" src="https://firebasestorage.googleapis.com/v0/b/web-johannesmilke.appspot.com/o/other%2Fsocial%2Fsponsorme.png?alt=media" />][sponsor]
-    
-[![GitHub stars](https://img.shields.io/github/stars/JohannesMilke/hive_database_example.svg?style=social&label=Star)](https://github.com/JohannesMilke/hive_database_example)
-[![GitHub JohannesMilke](https://img.shields.io/github/followers/JohannesMilke?label=follow&style=social)](https://github.com/JohannesMilke)
+# Good Budget
 
 Persist data with Flutter's Hive NoSQL Database locally on Android, iOS & Web.
 
-### ✌&ensp;Preview
+### Download Android apk
 
-|              App Preview             |             Course Preview           |
-| :----------------------------------: | :----------------------------------: |
-| <a href="https://www.youtube.com/watch?v=w8cZKm9s228" target="_blank"><img src="preview.gif" width="350"></a> | <a href="https://johannesmilke.teachable.com/p/home" target="_blank"><img src="https://firebasestorage.googleapis.com/v0/b/web-johannesmilke.appspot.com/o/other%2Fgithub_ad.png?alt=media" width="350"></a> |
+<a href='https://github.com/Sherida101/GoodBudget/releases/download/demo/appDemo.apk'>Download Good Budget Android apk</a>
 
-➜&ensp;[Buy My Courses](https://johannesmilke.teachable.com/p/home "Buy My Courses")
+Star ⭐ the repository if you like what you see 😉.
 
-### 📺&ensp;Watch Video
+## 📽📸 &ensp;Preview
 
-##### [YouTube video](https://www.youtube.com/watch?v=w8cZKm9s228 "Youtube Johannes Milke") where the *source code* is explained. [Subscribe YouTube channel.](https://www.youtube.com/JohannesMilke?sub_confirmation=1 "YouTube Subscribe Johannes Milke")  
-<a href="https://www.youtube.com/watch?v=w8cZKm9s228&feature=player_embedded
-" target="_blank"><img src="http://img.youtube.com/vi/w8cZKm9s228/maxresdefault.jpg" 
-alt="Flutter Tutorial - Hive NoSQL Database YouTube video" width="480" border="10" /></a>
 
-➜&ensp;[Watch My Video](https://www.youtube.com/watch?v=w8cZKm9s228 "Watch My Video")
+|                                                   Light Theme                                                 |                                                Dark Theme                                                  |
+|                                     :----------------------------------:                                      |                                     :----------------------------------:                                      |
+| <a href="https://www.youtube.com/watch?v=71g1mIcm2-U" target="_blank"><img src="appDemo.gif" width="350"></a> | <a href="https://www.youtube.com/watch?v=71g1mIcm2-U" target="_blank"><img src="appDemo.gif" width="350"></a> |
 
-### ⚡&ensp;Social Media
+## Screens
 
-[<img align="center" alt="JohannesMilke | YouTube" width="28px" src="https://firebasestorage.googleapis.com/v0/b/web-johannesmilke.appspot.com/o/other%2Fsocial%2Fyoutube.png?alt=media" />](https://www.youtube.com/JohannesMilke?sub_confirmation=1)&ensp;YouTube: [@JohannesMilke](https://www.youtube.com/JohannesMilke?sub_confirmation=1 "YouTube Johannes Milke")
+|                          **Light Theme - Home**                           |                 **Dark Theme - Home**                  |                       **Light Theme - Add Transaction**                       |                       **Dark Theme - Add Transaction**                        |
+| :-----------------------------------------------------------------------: | :----------------------------------------------------: | :---------------------------------------------------------------------------: | :---------------------------------------------------------------------------: |
+| <img src="screenshots/lightTheme_home_screen.png"  /> | <img src="screenshots/darkTheme_home_screen.png"    /> | <img src="screenshots/lightTheme_add_transaction.png"  /> | <img src="screenshots/darkTheme_add_transaction.png"   /> |
 
-[<img align="center" alt="JohannesMilke | Twitter" width="28px" src="https://firebasestorage.googleapis.com/v0/b/web-johannesmilke.appspot.com/o/other%2Fsocial%2Ftwitter.png?alt=media" />](https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fgithub.com%2FJohannesMilke&screen_name=JohannesMilke)&ensp;Twitter: [@JohannesMilke](https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fgithub.com%2FJohannesMilke&screen_name=JohannesMilke "Twitter Johannes Milke")
+## Features
 
-[<img align="center" alt="JohannesMilke | Instagram" width="28px" src="https://firebasestorage.googleapis.com/v0/b/web-johannesmilke.appspot.com/o/other%2Fsocial%2Finstagram.png?alt=media" />](https://instagram.com/JohannesMilke)&ensp;Instagram: [@JohannesMilke](https://instagram.com/JohannesMilke "Instagram Johannes Milke")
+- [✅] Add, edit or delete an expense transaction
+- [✅] Add, edit or delete an income transaction
+- [✅] Save data to Hive database
+- [✅] Dark theme support
+- [✅] Splash screen
+- [❌] Sort transactions by date and name
+- [❌] Search
 
-[<img align="center" alt="JohannesMilke | Facebook" width="28px" src="https://firebasestorage.googleapis.com/v0/b/web-johannesmilke.appspot.com/o/other%2Fsocial%2Ffacebook.png?alt=media" />](https://www.facebook.com/real.JohannesMilke)&ensp;Facebook: [@JohannesMilke](https://www.facebook.com/real.JohannesMilke "Facebook Johannes Milke")
+## ✨ Requirements
 
-[<img align="center" alt="JohannesMilke | LinkedIn" width="28px" src="https://firebasestorage.googleapis.com/v0/b/web-johannesmilke.appspot.com/o/other%2Fsocial%2Flinkedin.png?alt=media" />](https://linkedin.com/in/JohannesMilke)&ensp;LinkedIn: [@JohannesMilke](https://linkedin.com/in/JohannesMilke "LinkedIn Johannes Milke")
+- Any Operating System (ie. MacOS X, Linux, Windows)
+- Any IDE with Flutter SDK installed (ie. IntelliJ, Android Studio, VSCode etc)
+- Knowledge of Dart, Flutter and Hive database
 
-[<img align="center" alt="JohannesMilke | GitHub" width="28px" src="https://firebasestorage.googleapis.com/v0/b/web-johannesmilke.appspot.com/o/other%2Fsocial%2Fgithub.png?alt=media" />](https://github.com/JohannesMilke)&ensp;GitHub: [@JohannesMilke](https://github.com/JohannesMilke "GitHub Johannes Milke")
+## Getting Started
 
-[<img align="center" alt="JohannesMilke | Medium" width="28px" src="https://firebasestorage.googleapis.com/v0/b/web-johannesmilke.appspot.com/o/other%2Fsocial%2Fmedium.png?alt=media" />](https://medium.com/@JohannesMilke)&ensp;Medium: [@JohannesMilke](https://medium.com/@JohannesMilke "Medium Johannes Milke")
+This project is a starting point for a Flutter application.
 
-[<img align="center" alt="JohannesMilke | Website" width="28px" src="https://firebasestorage.googleapis.com/v0/b/web-johannesmilke.appspot.com/o/other%2Fsocial%2Fwebsite.png?alt=media" />](https://johannesmilke.com)&ensp;Website: [@JohannesMilke](https://johannesmilke.com "Website Johannes Milke")
+A few resources to get you started if this is your first Flutter project:
 
-[twitter]: https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fgithub.com%2FJohannesMilke&screen_name=JohannesMilke
-[youtube]: https://www.youtube.com/JohannesMilke?sub_confirmation=1
-[courses]: https://johannesmilke.teachable.com/p/home
-[newsletter]: https://johannesmilke.com/newsletter
-[sponsor]: https://github.com/sponsors/JohannesMilke
+- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+
+For help getting started with Flutter, view our
+[online documentation](https://flutter.dev/docs), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
+
+## ⚡&ensp;Social Media
+
+[<img align="center" alt="Sherida Providence | YouTube" width="28px" src="https://firebasestorage.googleapis.com/v0/b/web-johannesmilke.appspot.com/o/other%2Fsocial%2Fyoutube.png?alt=media" />](https://www.youtube.com/obAZ9eizOU77HaEoLn0jHA?sub_confirmation=1)&ensp;YouTube: [@Sherida Providence](https://www.youtube.com/obAZ9eizOU77HaEoLn0jHA?sub_confirmation=1 "YouTube Sherida Providence")
+
+[<img align="center" alt="Aaliyah Providence | Facebook" width="28px" src="https://firebasestorage.googleapis.com/v0/b/web-johannesmilke.appspot.com/o/other%2Fsocial%2Ffacebook.png?alt=media" />](https://www.facebook.com/smileysherida)&ensp;Facebook: [@Aaliyah Providence](https://www.facebook.com/smileysherida "Facebook Aaliyah Providence")
+
+[<img align="center" alt="AaliyahProvidence | LinkedIn" width="28px" src="https://firebasestorage.googleapis.com/v0/b/web-johannesmilke.appspot.com/o/other%2Fsocial%2Flinkedin.png?alt=media" />](https://linkedin.com/in/aaliyah-providence-0355b321a/)&ensp;LinkedIn: [@Aaliyah Providence](https://linkedin.com/in/aaliyah-providence-0355b321a/ "LinkedIn Aaliyah Providence")
+
+[<img align="center" alt="Sherida101 | GitHub" width="28px" src="https://firebasestorage.googleapis.com/v0/b/web-johannesmilke.appspot.com/o/other%2Fsocial%2Fgithub.png?alt=media" />](https://github.com/Sherida101)&ensp;GitHub: [@Sherida101](https://github.com/Sherida101 "GitHub Sherida101")
+
+# References 👏🏻
+
+- Concept was taken from [Johannes Milke's Hive Database project](https://github.com/JohannesMilke/hive_database_example).

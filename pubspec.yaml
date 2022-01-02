@@ -1,5 +1,8 @@
-name: hive_database_example
+name: good_budget
+description: An expense tracker Flutter project.
 version: 1.0.0+1
+
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
@@ -7,23 +10,42 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-  cupertino_icons: ^1.0.2
-
-  # hive database
-  hive: ^2.0.3
-  hive_flutter: ^1.0.0
-
-  # format dates
+  animated_splash_screen: ^1.1.0
+  cupertino_icons: ^1.0.4
+  currency_picker: ^2.0.6
+  easy_dynamic_theme: ^2.2.0
+  # Hive database
+  hive: ^2.0.5
+  hive_flutter: ^1.1.0
+  # Format dates
   intl: ^0.17.0
+  flutter_switch: ^0.3.2
+  page_transition: any
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: ^0.9.2
+  # Hive database generators
+  build_runner: ^2.1.7
+  hive_generator: ^1.1.1
 
-  # hive database generators
-  build_runner: ^1.12.2
-  hive_generator: ^1.0.1
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices. The lint set provided by the package is
+  # activated in the `analysis_options.yaml` file located at the root of your
+  # package. See that file for information about deactivating specific lint
+  # rules and activating additional ones.
+  flutter_lints: ^1.0.4
+
+# Run this command to set application icon
+# flutter pub run flutter_launcher_icons:main
+flutter_icons:
+  image_path: "assets/images/good_budget_logo.png"
+  android: true
+  ios: true
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/images/

@@ -1,10 +1,11 @@
+import 'package:currency_picker/currency_picker.dart';
 import 'package:flutter/material.dart';
-
-import '../model/transaction.dart';
+import 'package:good_budget/models/transaction.dart';
 
 class TransactionDialog extends StatefulWidget {
   final Transaction? transaction;
-  final Function(String name, double amount, bool isExpense) onClickedDone;
+  final Function(String name, double amount, String amountCurrencySymbol,
+      bool isExpense) onClickedDone;
 
   const TransactionDialog({
     Key? key,
@@ -17,9 +18,10 @@ class TransactionDialog extends StatefulWidget {
 }
 
 class _TransactionDialogState extends State<TransactionDialog> {
-  final formKey = GlobalKey<FormState>();
-  final nameController = TextEditingController();
-  final amountController = TextEditingController();
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  final TextEditingController nameController = TextEditingController();
+  final TextEditingController amountController = TextEditingController();
+  TextEditingController currencyController = TextEditingController();
 
   bool isExpense = true;
 
@@ -32,6 +34,7 @@ class _TransactionDialogState extends State<TransactionDialog> {
 
       nameController.text = transaction.name;
       amountController.text = transaction.amount.toString();
+      currencyController.text = transaction.amountCurrencySymbol;
       isExpense = transaction.isExpense;
     }
   }
@@ -40,28 +43,33 @@ class _TransactionDialogState extends State<TransactionDialog> {
   void dispose() {
     nameController.dispose();
     amountController.dispose();
-
+    currencyController.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+    Color? chooseCurrencyColorButton =
+        Theme.of(context).primaryColor; //Colors.teal;
     final isEditing = widget.transaction != null;
     final title = isEditing ? 'Edit Transaction' : 'Add Transaction';
 
     return AlertDialog(
-      title: Text(title),
+      scrollable: true,
+      title: Center(child: Text(title)),
       content: Form(
         key: formKey,
         child: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               buildName(),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
+              buildCurrency(chooseCurrencyColorButton),
+              const SizedBox(height: 8),
               buildAmount(),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               buildRadioButtons(),
             ],
           ),
@@ -69,14 +77,15 @@ class _TransactionDialogState extends State<TransactionDialog> {
       ),
       actions: <Widget>[
         buildCancelButton(context),
-        buildAddButton(context, isEditing: isEditing),
+        buildAddButton(context, chooseCurrencyColorButton,
+            isEditing: isEditing),
       ],
     );
   }
 
   Widget buildName() => TextFormField(
         controller: nameController,
-        decoration: InputDecoration(
+        decoration: const InputDecoration(
           border: OutlineInputBorder(),
           hintText: 'Enter Name',
         ),
@@ -84,8 +93,60 @@ class _TransactionDialogState extends State<TransactionDialog> {
             name != null && name.isEmpty ? 'Enter a name' : null,
       );
 
+  Widget buildCurrency(chooseCurrencyColorButton) =>
+      currencyController.text.isEmpty
+          ? ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  primary: chooseCurrencyColorButton,
+                  onPrimary: Colors.white,
+                  shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(8.0)))),
+              onPressed: () {
+                showCurrencyPicker(
+                  context: context,
+                  showFlag: true,
+                  showCurrencyName: true,
+                  showCurrencyCode: true,
+                  onSelect: (currency) {
+                    debugPrint(
+                        'Select currency: ${currency.name}\t${currency.symbol}');
+                    setState(() {
+                      currencyController =
+                          TextEditingController(text: currency.symbol);
+                    });
+                  },
+                );
+              },
+              child: const Text('Choose currency'))
+          : TextFormField(
+              readOnly: true,
+              decoration: InputDecoration(
+                suffixIcon: GestureDetector(
+                    onTap: () => showCurrencyPicker(
+                          context: context,
+                          showFlag: true,
+                          showCurrencyName: true,
+                          showCurrencyCode: true,
+                          onSelect: (currency) {
+                            debugPrint(
+                                'Select currency: ${currency.name}\t${currency.symbol}');
+                            setState(() {
+                              currencyController =
+                                  TextEditingController(text: currency.symbol);
+                            });
+                          },
+                        ),
+                    child: const Icon(Icons.change_circle)),
+                border: const OutlineInputBorder(),
+                hintText: currencyController.text,
+              ),
+              validator: (currency) =>
+                  currency == null ? 'Choose a currency!' : null,
+              controller: currencyController,
+            );
+
   Widget buildAmount() => TextFormField(
-        decoration: InputDecoration(
+        decoration: const InputDecoration(
           border: OutlineInputBorder(),
           hintText: 'Enter Amount',
         ),
@@ -98,14 +159,19 @@ class _TransactionDialogState extends State<TransactionDialog> {
 
   Widget buildRadioButtons() => Column(
         children: [
+          const Text(
+            'Transaction Type',
+            style: TextStyle(fontWeight: FontWeight.bold),
+            textAlign: TextAlign.left,
+          ),
           RadioListTile<bool>(
-            title: Text('Expense'),
+            title: const Text('Expense'),
             value: true,
             groupValue: isExpense,
             onChanged: (value) => setState(() => isExpense = value!),
           ),
           RadioListTile<bool>(
-            title: Text('Income'),
+            title: const Text('Income'),
             value: false,
             groupValue: isExpense,
             onChanged: (value) => setState(() => isExpense = value!),
@@ -114,23 +180,58 @@ class _TransactionDialogState extends State<TransactionDialog> {
       );
 
   Widget buildCancelButton(BuildContext context) => TextButton(
-        child: Text('Cancel'),
+        style: TextButton.styleFrom(
+            backgroundColor: Colors.blueGrey,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8.0),
+            ),
+            textStyle: const TextStyle(
+              color: Colors.white,
+            )),
+        child: const Text(
+          'Cancel',
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
         onPressed: () => Navigator.of(context).pop(),
       );
 
-  Widget buildAddButton(BuildContext context, {required bool isEditing}) {
+  Widget buildAddButton(BuildContext context, chooseCurrencyColorButton,
+      {required bool isEditing}) {
     final text = isEditing ? 'Save' : 'Add';
 
     return TextButton(
-      child: Text(text),
+      style: TextButton.styleFrom(
+          backgroundColor: Theme.of(context).primaryColor,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8.0),
+          ),
+          textStyle: const TextStyle(
+            color: Colors.white,
+          )),
+      child: Text(
+        text,
+        style:
+            const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+      ),
       onPressed: () async {
         final isValid = formKey.currentState!.validate();
 
-        if (isValid) {
-          final name = nameController.text;
-          final amount = double.tryParse(amountController.text) ?? 0;
+        if (currencyController.text.isEmpty) {
+          setState(() {
+            chooseCurrencyColorButton = Colors.red[900];
+          });
+        }
 
-          widget.onClickedDone(name, amount, isExpense);
+        if (isValid && currencyController.text.isNotEmpty) {
+          final name = nameController.text;
+          final amount = double.tryParse(amountController.text) ?? 0.0;
+          final amountCurrencySymbol = currencyController.text;
+
+          widget.onClickedDone(name, amount, amountCurrencySymbol, isExpense);
+
+          setState(() {
+            chooseCurrencyColorButton = Theme.of(context).primaryColor;
+          });
 
           Navigator.of(context).pop();
         }
