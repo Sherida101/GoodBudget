@@ -30,6 +30,25 @@ Star ⭐ the repository if you like what you see 😉.
 - [❌] Sort transactions by date and name
 - [❌] Search
 
+## Steps to Generate Hive Models
+1. **Add dependencies to dev_dependencies**
+    dev_dependencies:
+    
+        hive_generator: ^1.1.3 # <-- this line
+        
+        build_runner: ^2.2.1   # <-- this line
+
+2. **Add model files that contain the part keyword with the correct file name**
+
+    e.g. If the file that contains the hive model is named `transaction.dart`, it   
+         should contain this line:
+
+    `part 'transaction.g.dart';`
+
+3. **In the terminal of the project directory, run build_runner to re-generate the model files**
+
+    $ flutter pub run build_runner build --delete-conflicting-outputs
+
 ## ✨ Requirements
 
 - Any Operating System (ie. MacOS X, Linux, Windows)
