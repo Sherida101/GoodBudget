@@ -12,9 +12,7 @@ Star ⭐ the repository if you like what you see 😉.
 
 ## 📽📸 &ensp;Preview
 
-|                                                  Light Theme                                                  |                                                  Dark Theme                                                   |
-| :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
-| <a href="https://www.youtube.com/watch?v=71g1mIcm2-U" target="_blank"><img src="appDemo.gif" width="350"></a> | <a href="https://www.youtube.com/watch?v=71g1mIcm2-U" target="_blank"><img src="appDemo.gif" width="350"></a> |
+<a href="https://www.youtube.com/watch?v=71g1mIcm2-U" target="_blank"><img src="appDemo.gif" width="350"></a>
 
 ## Screens
 
